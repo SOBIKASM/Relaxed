@@ -1,0 +1,101 @@
+/* Importing the font to make sure it works */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
+:root {
+  --primary-gradient: linear-gradient(90deg, #476bb9 0%, #4988C4 20%, #1C4D8D 40%, #0F2854 60%, #213448 80%);
+  --deep-blue: #0F2854;
+  --soft-blue: rgba(3, 102, 214, 0.1);
+}
+
+.home-container {
+  padding: 18px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* Increased gap for better breathing room */
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: 'Comfortaa', sans-serif;
+}
+
+/* Typography */
+h1, #subheading, .take-away, .end-away blockquote {
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin: 0;
+}
+
+h1 {
+  padding-top: 30px;
+  font-size: 3rem;
+}
+
+h2 {
+  padding: 20px 0;
+  color: var(--deep-blue);
+  border-bottom: 2px solid var(--soft-blue);
+  margin-bottom: 15px;
+}
+
+h3 {
+  color: #190156; /* Keeping your green for benefits */
+  margin-top: 15px;
+}
+
+/* Boxes & Cards */
+.take-away, .end-away {
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: rgba(3, 102, 214, 0.2) 0px 0px 0px 3px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.technique-group, .benefit-card {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-left: 4px solid #4988C4;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Lists */
+ol, ul {
+  color: var(--deep-blue);
+  line-height: 2rem;
+  padding-left: 20px;
+}
+p,h3{
+  line-height: 2rem;
+}
+.benifit-body {
+  margin: 10px 0;
+  color: var(--deep-blue);
+  line-height: 1.8rem;
+}
+
+/* Footer Styling */
+.footer {
+  margin-top: 50px;
+  padding: 40px 0;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  color: var(--deep-blue);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 15px;
+}
+
+.footer-links a {
+  color: #476bb9;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--deep-blue);
+  transform: translateY(-3px);
+}
