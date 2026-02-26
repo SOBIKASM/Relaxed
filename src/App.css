@@ -1,9 +1,24 @@
 .app {
   display: flex;
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; /* Prevent outer scrolling */
 }
 
-.main-container {
+.main-content {
   flex: 1;
+  overflow-y: auto; /* Allow scrolling in main content */
+  height: 100vh;
+}
 
+/* Home page can scroll normally */
+.home-container {
+  min-height: 100%;
+  overflow-y: visible; /* Allow natural scrolling */
+}
+
+/* Breath page should not scroll */
+.breath-container {
+  height: 100vh;
+  overflow: hidden;
 }

@@ -1,8 +1,8 @@
-import './Home.css';
+import './More.css';
 // If you want to use icons for the footer, I recommend: npm install lucide-react
 import { Instagram, Linkedin, Mail } from 'lucide-react'; 
 
-function Home() {
+function More() {
   return (
     <div className='home-container'>
       {/* Hero Section */}
@@ -121,4 +121,4 @@ function Home() {
   )
 }
 
-export default Home;
+export default More;

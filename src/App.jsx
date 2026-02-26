@@ -1,27 +1,25 @@
-import './App.css'
-import { Navigate } from "react-router-dom";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Sidebar from './components/Sidebar'
-import Home from './pages/Home'
-import Breath from './pages/Breath'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import More from './pages/More';
+import Breath from './pages/Breath';
+import Sidebar from './components/Sidebar';
+import './App.css';
+import Start from './pages/Start';
 
 function App() {
   return (
-    <div className='app'>
-      <Router>
+    <BrowserRouter>
+      <div className="app">
         <Sidebar />
-        <div className='main-container'>
+        <main className="main-content">
           <Routes>
-            import {Navigate} from "react-router-dom";
-
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Navigate to="/" />} />
-            <Route path='/technique/:category/:type' element={<Breath />} />
+            <Route path="/" element={<Start />} />
+            <Route path="/more" element={<More />} />
+            <Route path="/breath/:type" element={<Breath />} />
           </Routes>
-        </div>
-      </Router>
-    </div>
-  )
+        </main>
+      </div>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

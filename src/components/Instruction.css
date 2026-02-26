@@ -1,0 +1,10 @@
+.instruction-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.instruction-text{
+  font-size: 24px;
+  margin-bottom: 10px;
+} 

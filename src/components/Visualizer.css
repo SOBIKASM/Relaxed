@@ -1,0 +1,118 @@
+.visualizer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  width: 100%;
+  padding: 20px 0;
+  position: relative;
+}
+
+.circle-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.breathing-circle {
+  width: 180px;
+  height: 180px;
+margin: 5px auto;
+  border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(168, 213, 255, 0.3);
+  will-change: transform;
+}
+
+/* Phase-specific colors with softer gradients */
+.breathing-circle.inhale {
+  background: radial-gradient(circle at 30% 30%, #A8D5FF, #7FB4D9);
+}
+
+.breathing-circle.hold {
+  background: radial-gradient(circle at 50% 50%, #B8E0D4, #8FC5B5);
+}
+
+.breathing-circle.exhale {
+  background: radial-gradient(circle at 70% 70%, #D4B8E0, #B58FC5);
+}
+
+.timer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  font-weight: 300;
+  color: #FFFFFF;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(90deg, #476bb9 0%, #4988C4 20%, #1C4D8D 40%, #0F2854 60%, #213448 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  backdrop-filter: blur(4px);
+  padding: 15px 25px;
+  border-radius: 60px;
+  letter-spacing: 2px;
+  
+}
+
+.phase-text {
+  margin-top: 30px;
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #476bb9 0%, #4988C4 20%, #1C4D8D 40%, #0F2854 60%, #213448 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -1px;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .visualizer-container {
+    min-height: 350px;
+    padding: 10px 0;
+  }
+
+  .breathing-circle {
+    width: 150px;
+    height: 150px;
+  }
+
+  .timer {
+    font-size: 2.5rem;
+    padding: 12px 20px;
+  }
+
+  .phase-text {
+    font-size: 1.5rem;
+    margin-top: 20px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .visualizer-container {
+    min-height: 300px;
+  }
+
+  .breathing-circle {
+    width: 130px;
+    height: 130px;
+  }
+
+  .timer {
+    font-size: 2rem;
+    padding: 10px 18px;
+  }
+
+  .phase-text {
+    font-size: 1.3rem;
+  }
+}
