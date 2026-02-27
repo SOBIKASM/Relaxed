@@ -38,113 +38,66 @@
 }
 
 .technique-name {
-  font-size: 1rem;
   text-transform: uppercase;
   color: #2C3E50;
-  font-weight: 200;
   letter-spacing: 2px;
   line-height: 1.2;
   padding: 0;
 }
 
 .description {
-  font-size: 1rem;
   color: #396292;
-  font-weight: 300;
   text-align: center;
   max-width: 500px;
 }
 
-/* Compact stats grid - minimal area */
-.stats-grid {
-  display: flex;
-  gap: 0.5rem;
-  justify-content: center;
-  margin: 0.5rem 0;
-}
 
-.stats-grid div {
-  text-align: center;
-  padding: 0.25rem 0.75rem;
-  background: rgba(184, 228, 248, 0.646);
-  border-radius: 10px;
-  backdrop-filter: blur(5px);
-  min-width: 60px;
-}
-
-.stats-grid strong {
-  display: block;
-  color: #0f7dde;
-  font-weight: 400;
-  text-transform: uppercase;
-  font-size: 0.7rem;
-  letter-spacing: 1px;
-}
-
-.stats-grid p {
-  font-size: 1rem;
-  font-weight: 400;
-  color: #2C3E50;
-  line-height: 1.2;
-}
-
-/* Desktop */
-@media (min-width: 769px) {
-  .breath-content {
-    padding: 1rem 2rem;
-  }
-  
-  .technique-name {
-    font-size: 3rem;
-  }
-}
-
-/* Tablet */
 @media (max-width: 768px) {
-  .breath-content {
-    max-width: 100%; /* Full width on tablet */
-  }
-  
   .technique-name {
-    font-size: 2.2rem;
-  }
-  
-  .stats-grid div {
-    padding: 0.2rem 0.6rem;
-  }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  
-  /* Hide category and description on mobile */
-  .category,
-  .description {
-    display: none;
-  }
-  
-  .technique-name {
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-align: center;
     margin: 25px 0 0 0;
-  }
-  
-  .stats-grid {
-    gap: 1rem;
+  } 
+}
+.timer-controls {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+  padding: 8px 15px;
+  border-radius: 50px;
+  z-index: 10;
+}
 
-  }
-  
-  .stats-grid div {
-    padding: 0.15rem 0.4rem;
-    min-width: 50px;
-  }
-  
-  .stats-grid strong {
-    padding: 0.15rem 0.4rem;
-    font-size: 0.6rem;
-  }
-  
-  .stats-grid p {
-    font-size: 0.9rem;
+.timer-text {
+  font-family: monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #1C4D8D;
+}
+
+.timer-btn {
+  background: #1C4D8D;
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .timer-controls {
+    top: 20px;
+    right: 20px;
+    padding: 6px 12px;
   }
 }

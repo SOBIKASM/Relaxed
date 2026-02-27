@@ -14,7 +14,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Start />} />
             <Route path="/more" element={<More />} />
-            <Route path="/breath/:type" element={<Breath />} />
+            <Route path="/breath/:category/:type/:duration/:theme" element={<Breath />} />
           </Routes>
         </main>
       </div>
