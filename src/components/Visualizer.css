@@ -61,10 +61,17 @@
   .phase-text {
     font-size: 1.5rem;
     top: 45%;
-    left: 39%;
+    left: 35%;
   }
 }
 
+@media (max-width: 1024px) {
+  .phase-text {
+    font-size: 1.5rem;
+    top: 45%;
+    left: 45%;
+  }
+}
 .timer {
   margin-top: 30px;
   font-size: 1.5rem;

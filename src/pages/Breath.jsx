@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import Visualizer from "../components/Visualizer";
 import "./Breath.css";
 
@@ -24,6 +25,7 @@ const BACKGROUNDS = {
 };
 
 function Breath() {
+  const navigate = useNavigate();
   const { category, type, duration, theme } = useParams();
   const technique = DATA[type];
 
@@ -37,17 +39,33 @@ function Breath() {
 
   const [timeLeft, setTimeLeft] = useState(totalSeconds);
   const [isPaused, setIsPaused] = useState(false);
+  const [sessionComplete, setSessionComplete] = useState(false);
+  const [progress, setProgress] = useState(0);
   const containerRef = useRef(null);
 
+  // Calculate progress percentage
   useEffect(() => {
-    if (timeLeft <= 0 || isPaused) return;
+    const progressPercent = ((totalSeconds - timeLeft) / totalSeconds) * 100;
+    setProgress(progressPercent);
+  }, [timeLeft, totalSeconds]);
+
+  // Handle timer completion
+  useEffect(() => {
+    if (timeLeft <= 0 && !sessionComplete) {
+      setSessionComplete(true);
+      setIsPaused(true); // Pause the visualizer
+    }
+  }, [timeLeft, sessionComplete]);
+
+  useEffect(() => {
+    if (timeLeft <= 0 || isPaused || sessionComplete) return;
 
     const timerId = setInterval(() => {
       setTimeLeft(prev => prev - 1);
     }, 1000);
 
     return () => clearInterval(timerId);
-  }, [isPaused, timeLeft]);
+  }, [isPaused, timeLeft, sessionComplete]);
 
   const formatTime = (seconds) => {
     const mins = Math.floor(seconds / 60);
@@ -70,17 +88,78 @@ function Breath() {
     container.style.backgroundBlendMode = "overlay";
   }, [theme]);
 
+  const handleResume = () => {
+    setIsPaused(false);
+  };
+
+  const handleNewSession = () => {
+    // Reset everything for a new session
+    setTimeLeft(totalSeconds);
+    setSessionComplete(false);
+    setIsPaused(false);
+    setProgress(0);
+  };
+
+  const handleGoBack = () => {
+    // Navigate back to the previous page (technique selection)
+    navigate(-1);
+  };
+
   return (
     <div className="breath-container" ref={containerRef}>
+      {/* Progress Bar */}
+      <div className="progress-bar-container">
+        <div 
+          className="progress-bar-fill" 
+          style={{ width: `${progress}%` }}
+        ></div>
+      </div>
+
       <div className="timer-controls">
         <div className="timer-text">{formatTime(timeLeft)}</div>
-        <button
-          onClick={() => setIsPaused(!isPaused)}
-          className="timer-btn"
-        >
-          {isPaused ? "▶" : "⏸️"}
-        </button>
+        {!sessionComplete && (
+          <button
+            onClick={() => setIsPaused(!isPaused)}
+            className="timer-btn"
+          >
+            {isPaused ? "▶" : "⏸️"}
+          </button>
+        )}
       </div>
+
+      {/* Pause Overlay */}
+      {isPaused && !sessionComplete && (
+        <div className="pause-overlay" onClick={handleResume}>
+          <div className="pause-content" onClick={(e) => e.stopPropagation()}>
+            <h2>Session Paused</h2>
+            <p>Take a moment to breathe naturally</p>
+            <button className="resume-btn" onClick={handleResume}>
+              Resume Session
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Session Complete Overlay */}
+      {sessionComplete && (
+        <div className="session-complete-overlay">
+          <div className="session-complete-content">
+            <h2>✨ Session Complete ✨</h2>
+            <p>Great job! You've completed your breathing session.</p>
+            <p className="completion-message">
+              {technique.text} Feel refreshed and centered.
+            </p>
+            <div className="session-complete-actions">
+              <button className="new-session-btn" onClick={handleNewSession}>
+                Start New Session
+              </button>
+              <button className="go-back-btn" onClick={handleGoBack}>
+                Choose Different Technique
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className="breath-content">
         <header>
@@ -90,7 +169,10 @@ function Breath() {
           <p className="description">{technique.text}</p>
         </header>
 
-        <Visualizer technique={technique}  isPaused={isPaused}/>
+        <Visualizer 
+          technique={technique}  
+          isPaused={isPaused || sessionComplete}
+        />
       </div>
     </div>
   );
