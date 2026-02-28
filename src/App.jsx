@@ -3,6 +3,7 @@ import More from './pages/More';
 import Breath from './pages/Breath';
 import Sidebar from './components/Sidebar';
 import './App.css';
+import Detail from './pages/Detail';  
 import Start from './pages/Start';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Start />} />
             <Route path="/more" element={<More />} />
+            <Route path="/detail/:type" element={<Detail />} />
             <Route path="/breath/:category/:type/:duration/:theme" element={<Breath />} />
           </Routes>
         </main>

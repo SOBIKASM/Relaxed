@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+
+.detail-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(10deg, #ffffff 0%, #e6f0f5 40%, #bad6e5 100%);
+  font-family: 'Comfortaa', sans-serif;
+  padding: 20px;
+}
+
+.detail-card {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.detail-title {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #476bb9 0%, #4988C4 20%, #1C4D8D 40%, #0F2854 60%, #213448 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.detail-description {
+  color: #567ca7;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+/* Timing Box */
+.timing-box {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 25px;
+  border: 1px solid rgba(73, 136, 196, 0.2);
+}
+
+.timing-box h3 {
+  margin-bottom: 15px;
+  color: #1C4D8D;
+}
+
+.timing-grid {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.timing-grid div {
+  flex: 1;
+}
+
+.timing-grid span {
+  display: block;
+  font-size: 12px;
+  color: #567ca7;
+  margin-bottom: 5px;
+}
+
+.timing-grid strong {
+  font-size: 20px;
+  color: #1C4D8D;
+}
+
+/* Sections */
+.section {
+  margin-bottom: 20px;
+}
+
+.section h3 {
+  margin-bottom: 10px;
+  color: #1C4D8D;
+}
+
+.section ul {
+  padding-left: 20px;
+  color: #2c4a70;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.benefits li {
+  list-style: "✓  ";
+  padding-left: 5px;
+}

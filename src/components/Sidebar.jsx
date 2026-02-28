@@ -54,7 +54,7 @@ function Sidebar() {
                       {value.items.map(type => (
                         <NavLink 
                           key={type} 
-                          to={`/breath/${type}`}
+                          to={`/detail/${type}`}
                           className={({ isActive }) => isActive ? 'active-link' : ''}
                         >
                           {type.replace(/-/g, ' ')} Breathing
