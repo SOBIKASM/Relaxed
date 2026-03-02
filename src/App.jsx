@@ -1,26 +1,33 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// App.jsx or your main layout file
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ThemeProvider } from './context/ThemeContext';
+import ThemeToggle from './components/ThemeToggle';
+import Sidebar from './components/Sidebar';
+import Start from './pages/Start';
 import More from './pages/More';
 import Breath from './pages/Breath';
-import Sidebar from './components/Sidebar';
-import './App.css';
-import Detail from './pages/Detail';  
-import Start from './pages/Start';
+import Detail from './pages/Detail';
+import './styles/dark-theme.css'; // Import the theme variables
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="app">
-        <Sidebar />
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<Start />} />
-            <Route path="/more" element={<More />} />
-            <Route path="/detail/:type" element={<Detail />} />
-            <Route path="/breath/:category/:type/:duration/:theme" element={<Breath />} />
-          </Routes>
-        </main>
-      </div>
-    </BrowserRouter>
+    <ThemeProvider>
+      <Router>
+        <div style={{ display: 'flex' }}>
+          <Sidebar />
+          <ThemeToggle />
+          <main style={{ flex: 1, background: 'var(--bg-primary)', minHeight: '100vh' }}>
+            <Routes>
+              <Route path="/" element={<Start />} />
+              <Route path="/more" element={<More />} />
+              <Route path="/breath/:category/:type/:duration" element={<Breath />} />
+              <Route path="/detail/:type" element={<Detail />} />
+            </Routes>
+          </main>
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }
 

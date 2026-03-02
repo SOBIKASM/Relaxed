@@ -208,11 +208,8 @@ function Detail() {
   return (
     <div className="detail-container">
       <div className="detail-card">
-
         <h1 className="detail-title">{data.name}</h1>
         <p className="detail-description">{data.description}</p>
-
-        {/* Timings */}
         <div className="timing-box">
           <h3>Breathing Pattern</h3>
           <div className="timing-grid">
@@ -232,8 +229,6 @@ function Detail() {
             </div>
           </div>
         </div>
-
-        {/* Steps */}
         <div className="section">
           <h3>How to Practice</h3>
           <ul>
@@ -242,8 +237,6 @@ function Detail() {
             ))}
           </ul>
         </div>
-
-        {/* Benefits */}
         <div className="section">
           <h3>Benefits</h3>
           <ul className="benefits">

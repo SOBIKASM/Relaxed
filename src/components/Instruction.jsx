@@ -1,28 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import './Instruction.css';
+import { useTheme } from '../context/ThemeContext';
 
 const BREATH_PHASES = {
   inhale: {
     start: "Breathe in deeply",
     mid: "Fill your lungs...",
-    end: "Almost full",
-    color: "#4A90E2"
+    end: "Almost full"
   },
   hold: {
     start: "Hold that breath",
     mid: "Find the stillness",
-    end: "Just a moment more",
-    color: "#F5A623"
+    end: "Just a moment more"
   },
   exhale: {
     start: "Let it all out",
     mid: "Releasing tension...",
-    end: "Good...",
-    color: "#50E3C2"
+    end: "Good..."
   }
 };
 
-function Instruction({phase, progress}) {
+function Instruction({ phase, progress }) {
+  const { theme } = useTheme();
   const [text, setText] = useState("");
   const [opacity, setOpacity] = useState(1);
 
@@ -41,9 +40,16 @@ function Instruction({phase, progress}) {
 
   return (
     <div className="instruction-container" style={{ opacity, transition: 'opacity 0.4s ease-in-out' }}>
-      <h2 className="instruction-text">{text}</h2>
+      <h2 
+        className="instruction-text"
+        style={{
+          color: theme === 'dark' ? 'var(--instruction-color)' : 'var(--text-heading)'
+        }}
+      >
+        {text}
+      </h2>
     </div>
-  )
+  );
 }
 
 export default Instruction;

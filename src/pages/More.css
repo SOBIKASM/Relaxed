@@ -4,6 +4,7 @@
   --primary-gradient: linear-gradient(90deg, #476bb9 0%, #4988C4 20%, #1C4D8D 40%, #0F2854 60%, #213448 80%);
   --deep-blue: #0F2854;
   --soft-blue: rgba(3, 102, 214, 0.1);
+  --off-white: #fdfdfd; /* Subtle background for images */
 }
 
 .home-container {
@@ -12,21 +13,82 @@
   flex-direction: column;
   gap: 40px; 
   max-width: 900px;
-  margin: 0 20px;
+  margin: 0 auto; /* Centering the container */
   font-family: 'Comfortaa', sans-serif;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+}
+h1, #subheading, .take-away p, .end-away blockquote {
+  background: linear-gradient(90deg, var(--gradient-start) 0%, var(--gradient-mid1) 20%, var(--gradient-mid2) 40%, var(--gradient-mid3) 60%, var(--gradient-end) 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+/* New Flex Layout Utility */
+.flex-section {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.reverse-flex {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+  .flex-section, .reverse-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Hero Section (Swan) */
+.hero {
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--soft-blue);
+}
+
+.hero-visual, .hero-text {
+  flex: 1;
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* About Us Section (Meditate) */
+.intro {
+  margin-top: 30px;
+}
+
+.intro-visual, .intro-text {
+  flex: 1;
+}
+
+.intro-img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 50%; /* Circle shape for this image */
+  background-color: var(--off-white);
+  padding: 10px; /* Border effect */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 /* Typography */
-h1, #subheading, .take-away, .end-away blockquote {
+h1, #subheading, .take-away p, .end-away blockquote {
   background: var(--primary-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-align: center;
   margin: 0;
 }
 
 h1 {
-  padding-top: 30px;
+  padding-top: 10px; /* Reduced since it's now in a flex box */
   font-size: 3rem;
 }
 
@@ -38,7 +100,7 @@ h2 {
 }
 
 h3 {
-  color: #190156; /* Keeping your green for benefits */
+  color: var(--gradient-mid1);
   margin-top: 15px;
 }
 
@@ -46,16 +108,29 @@ h3 {
 .take-away, .end-away {
   padding: 30px;
   border-radius: 15px;
-  box-shadow: rgba(3, 102, 214, 0.2) 0px 0px 0px 3px;
+  box-shadow: var(--soft-blue) 0px 0px 0px 3px;
   font-weight: bold;
   font-size: 1.2rem;
+  text-align: center; 
+   background: var(--card-bg);
+}
+
+.take-away p, .end-away blockquote {
+    -webkit-text-fill-color: initial; /* Override gradient for better readability in these blocks */
+    color: var(--deep-blue);
+}
+
+.take-away p {
+    background: initial;
+    -webkit-background-clip: initial;
 }
 
 .technique-group, .benefit-card {
   margin-bottom: 20px;
   padding: 15px;
-  border-left: 4px solid #4988C4;
-  background: rgba(255, 255, 255, 0.5);
+  border-left: 4px solid var(--gradient-mid1);
+  background: var(--card-bg);
+  border-radius: 0 8px 8px 0; /* Soften the right edges */
 }
 
 /* Lists */
@@ -66,6 +141,7 @@ ol, ul {
 }
 p,h3{
   line-height: 2rem;
+  color: var(--text-primary);
 }
 .benifit-body {
   margin: 10px 0;
@@ -73,11 +149,21 @@ p,h3{
   line-height: 1.8rem;
 }
 
+/* Quote styling */
+.end-away blockquote {
+    background: initial;
+    -webkit-background-clip: initial;
+    font-size: 1.4rem;
+    font-style: italic;
+    border: none;
+    padding: 0;
+}
+
 /* Footer Styling */
 .footer {
   margin-top: 50px;
   padding: 40px 0;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid var(--input-border);
   text-align: center;
   color: var(--deep-blue);
 }
@@ -90,7 +176,7 @@ p,h3{
 }
 
 .footer-links a {
-  color: #476bb9;
+  color:  var(--gradient-mid1);
   transition: transform 0.2s ease, color 0.2s ease;
 }
 

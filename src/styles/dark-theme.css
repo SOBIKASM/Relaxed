@@ -1,0 +1,73 @@
+/* Light theme (default) */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #e6f0f5;
+  --bg-tertiary: #bad6e5;
+  --text-primary: #2c3e50;
+  --text-secondary: #4a5568;
+  --text-heading: #1C4D8D;
+  --text-gradient: linear-gradient(90deg, #476bb9 0%, #4988C4 20%, #1C4D8D 40%, #0F2854 60%, #213448 80%);
+  --text-gradient-webkit: linear-gradient(90deg, #476bb9, #4988C4, #1C4D8D, #0F2854, #213448);
+  --card-bg: rgba(255, 255, 255, 0.4);
+  --card-border: rgba(255, 255, 255, 0.3);
+  --input-bg: rgba(255, 255, 255, 0.6);
+  --input-border: rgba(73, 136, 196, 0.2);
+  --shadow-color: rgba(0, 0, 0, 0.05);
+  --select-color: #1C4D8D;
+  --gradient-start: #476bb9;
+  --gradient-mid1: #4988C4;
+  --gradient-mid2: #1C4D8D;
+  --gradient-mid3: #0F2854;
+  --gradient-end: #213448;
+  --deep-blue: #0F2854;
+  --soft-blue: rgba(3, 102, 214, 0.1);
+  --off-white: #fdfdfd;
+  --sidebar-bg: linear-gradient(210deg, #ffffff 0%, #e6f0f5 40%, #bad6e5 100%);
+  --hover-bg: rgba(255, 255, 255, 0.4);
+  --active-bg: #ffffff;
+  --circle-inhale: radial-gradient(circle, #A8D5FF, #7FB4D9);
+  --circle-hold: radial-gradient(circle, #B8E0D4, #8FC5B5);
+  --circle-exhale: radial-gradient(circle, #D4B8E0, #B58FC5);
+  --instruction-color: #1C4D8D;
+  --timer-color: #1C4D8D;
+  --phase-text-gradient: linear-gradient(90deg, #476bb9 0%, #4988C4 20%, #1C4D8D 40%, #0F2854 60%, #213448 80%);
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  --text-heading-solid: #90cdf4;
+  --timer-color-solid: #90cdf4;
+  --phase-text-color: #90cdf4;
+  --instruction-color-solid: #90cdf4;
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-tertiary: #2d2d2d;
+  --text-primary: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --text-heading: #90cdf4;
+  --text-gradient: linear-gradient(90deg, #90cdf4 0%, #63b3ed 20%, #4299e1 40%, #3182ce 60%, #2c5282 80%);
+  --text-gradient-webkit: linear-gradient(90deg, #90cdf4, #63b3ed, #4299e1, #3182ce, #2c5282);
+  --card-bg: rgba(30, 30, 30, 0.8);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --input-bg: rgba(45, 45, 45, 0.9);
+  --input-border: rgba(144, 205, 244, 0.2);
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --select-color: #90cdf4;
+  --gradient-start: #90cdf4;
+  --gradient-mid1: #63b3ed;
+  --gradient-mid2: #4299e1;
+  --gradient-mid3: #3182ce;
+  --gradient-end: #2c5282;
+  --deep-blue: #90cdf4;
+  --soft-blue: rgba(144, 205, 244, 0.15);
+  --off-white: #2d2d2d;
+  --sidebar-bg: linear-gradient(210deg, #1a1a1a 0%, #222222 40%, #2a2a2a 100%);
+  --hover-bg: rgba(255, 255, 255, 0.1);
+  --active-bg: #333333;
+  --circle-inhale: radial-gradient(circle, #2c5282, #1a365d);
+  --circle-hold: radial-gradient(circle, #2d3748, #1a202c);
+  --circle-exhale: radial-gradient(circle, #44337a, #322659);
+  --instruction-color: #90cdf4;
+  --timer-color: #90cdf4;
+  --phase-text-gradient: linear-gradient(90deg, #90cdf4 0%, #63b3ed 20%, #4299e1 40%, #3182ce 60%, #2c5282 80%);
+}

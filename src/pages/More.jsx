@@ -1,32 +1,35 @@
+import React from 'react';
 import './More.css';
-// If you want to use icons for the footer, I recommend: npm install lucide-react
 import { Instagram, Linkedin, Mail } from 'lucide-react'; 
 
 function More() {
   return (
     <div className='home-container'>
-      {/* Hero Section */}
-      <header className='hero'>
-        <h1>Relaxed</h1>
-        <p id='subheading'>Come here and breathe</p> 
+      <header className='hero flex-section'>
+        <div className="hero-visual">
+          <img src="../realswan.jpg" alt="Serene swan on calm water" className="hero-img" />
+        </div>
+        <div className="hero-text">
+          <h1>Relaxed</h1>
+          <p id='subheading'>Come here and breathe</p> 
+        </div>
       </header>
-
-      {/* Key Message */}
       <section className='take-away'>
         <p>Breathing techniques can reduce stress, improve sleep and performance, and ease anxiety by bringing awareness to your breath.</p>
       </section>
-
-      {/* About Us */}
-      <section className='intro'>
-        <h2>Who are we?</h2>
-        <p>
-          Anxiety is a journey many of us walk—you aren't alone. 
-          We built this because we’ve been there too, and we believe everyone 
-          deserves accessible tools to find their calm.
-        </p>
+      <section className='intro flex-section reverse-flex'>
+        <div className="intro-visual">
+          <img src="../meditate.png" alt="Person in meditation silhouette" className="intro-img" />
+        </div>
+        <div className="intro-text">
+          <h2>Who are we?</h2>
+          <p>
+            Anxiety is a journey many of us walk—you aren't alone. 
+            We built this because we’ve been there too, and we believe everyone 
+            deserves accessible tools to find their calm.
+          </p>
+        </div>
       </section>
-
-      {/* Benefits List */}
       <section className='why'>
         <h2>Why it matters?</h2>
         <ol>
@@ -37,11 +40,8 @@ function More() {
           <li>Activates the parasympathetic nervous system</li>
         </ol>
       </section>
-
-      {/* Breathing Types */}
       <section className='types'>
         <h2>Breathing Techniques</h2>
-        
         <div className="technique-group">
           <h3>For Stress & Anxiety</h3>
           <ul>
@@ -50,7 +50,6 @@ function More() {
             <li>4-7-8 breathing</li>
           </ul>
         </div>
-
         <div className="technique-group">
           <h3>For Sleep and Balance</h3>
           <ul>
@@ -58,7 +57,6 @@ function More() {
             <li>Slow breathing</li>
           </ul>
         </div>
-
         <div className="technique-group">
           <h3>For Energy</h3>
           <ul>
@@ -75,8 +73,6 @@ function More() {
           </ul>
         </div>
       </section>
-
-      {/* Detailed Benefits */}
       <section className='benefits'>
         <h2>Benefits</h2>
         <div className="benefit-card">
@@ -88,11 +84,8 @@ function More() {
           <p>A 2023 review showed breathwork has a greater impact on calming stress than non-breathwork techniques, making it a powerful tool for coping with intense emotions.</p>
         </div>
       </section>
-
-      {/* Disclaimer */}
       <section className='disclaimer'>
         <h2>Disclaimer</h2>
-        
         <p>Consult a professional if you have:</p>
         <ul>
           <li>Severe asthma</li>
@@ -102,13 +95,9 @@ function More() {
           <p>Not suitable for medical care.</p>
         </ul>
       </section>
-
-      {/* Quote */}
       <div className='end-away'>
-        <blockquote>“Your breath is your most accessible therapy. Learn to use it.”</blockquote>
+        <blockquote >“Your breath is your most accessible therapy. Learn to use it.”</blockquote>
       </div>
-
-      {/* Footer */}
       <footer className='footer'>
         <div className="footer-links">
           <a href="https://instagram.com" target="_blank" rel="noreferrer"><Instagram size={20} /></a>
@@ -120,5 +109,4 @@ function More() {
     </div>
   )
 }
-
 export default More;

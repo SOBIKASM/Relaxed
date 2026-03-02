@@ -15,15 +15,14 @@ function Start() {
   const [category, setCategory] = React.useState("");
   const [type, setType] = React.useState("");
   const [duration, setDuration] = React.useState("");
-  const [theme, setTheme] = React.useState("");
 
   const handleStart = () => {
-    if (!category || !type || !duration || !theme) {
+    if (!category || !type || !duration) {
       alert("Please select all fields");
       return;
     }
 
-    navigate(`/breath/${category}/${type}/${duration}/${theme}`);
+    navigate(`/breath/${category}/${type}/${duration}`);
   };
 
   return (
@@ -79,22 +78,6 @@ function Start() {
             <option value="20">20 minutes</option>
           </select>
         </div>
-
-        <div className="input-group">
-          <label>THEME</label>
-          <select
-            value={theme}
-            onChange={(e) => setTheme(e.target.value)}
-          >
-            <option value="">Choose theme</option>
-            <option value="buddha">Buddha</option>
-            <option value="lotus">Lotus</option>
-            <option value="ocean">Ocean</option>
-            <option value="mountain">Mountain</option>
-            <option value="forest">Forest</option>
-          </select>
-        </div>
-
         <button className="start-btn" onClick={handleStart}>
           Start Session
         </button>
