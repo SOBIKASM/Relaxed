@@ -9,7 +9,23 @@
   font-family: 'Comfortaa', sans-serif;
   padding: 20px;
 }
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
 
+.start-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.start-logo:hover {
+  opacity: 1;
+}
 .start-card {
   background: var(--card-bg);
   backdrop-filter: blur(10px);

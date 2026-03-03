@@ -61,7 +61,14 @@ function Sidebar() {
       )}
 
       <div className={`sidebar ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
-        <p className='title'>Relaxed</p>
+        <div className="sidebar-header">
+          <img 
+            src="/logo.png" 
+            alt="Meditation Buddha Logo" 
+            className="sidebar-logo"
+          />
+          <p className='title'>Relaxed</p>
+        </div>
         <nav className='nav' onClick={handleLinkClick}>
           
           <NavLink to='/' className={({ isActive }) => isActive ? 'active-link' : ''} end>

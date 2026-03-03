@@ -28,6 +28,13 @@ function Start() {
   return (
     <div className="start-container">
       <div className="start-card">
+        <div className="logo-wrapper">
+          <img
+            src="/logo.png"
+            alt="Meditation Buddha Logo"
+            className="start-logo"
+          />
+        </div>
         <h1 className="title-start">Relaxed</h1>
         <p className="subtitle">Your journey to calm starts here.</p>
 
