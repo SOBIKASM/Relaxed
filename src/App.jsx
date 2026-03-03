@@ -1,4 +1,3 @@
-// App.jsx or your main layout file
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
@@ -8,8 +7,7 @@ import Start from './pages/Start';
 import More from './pages/More';
 import Breath from './pages/Breath';
 import Detail from './pages/Detail';
-import './styles/dark-theme.css'; // Import the theme variables
-
+import './styles/dark-theme.css'; 
 function App() {
   return (
     <ThemeProvider>

@@ -59,7 +59,7 @@ function Start() {
             {category &&
               TECHNIQUES[category].map((item, index) => (
                 <option key={index} value={item}>
-                  {item}
+                  {item.charAt(0).toUpperCase() + item.slice(1)} Breathing
                 </option>
               ))}
           </select>

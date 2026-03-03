@@ -25,7 +25,7 @@
   --sidebar-bg: linear-gradient(210deg, #ffffff 0%, #e6f0f5 40%, #bad6e5 100%);
   --hover-bg: rgba(255, 255, 255, 0.4);
   --active-bg: #ffffff;
-  --circle-inhale: radial-gradient(circle, #A8D5FF, #7FB4D9);
+--circle-inhale: radial-gradient(circle, #7FC8FF, #3A8DCC);
   --circle-hold: radial-gradient(circle, #B8E0D4, #8FC5B5);
   --circle-exhale: radial-gradient(circle, #D4B8E0, #B58FC5);
   --instruction-color: #1C4D8D;

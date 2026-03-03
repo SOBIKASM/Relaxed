@@ -162,12 +162,12 @@ function Breath() {
       )}
 
       <div className="breath-content">
-        <header>
-          <h1 className="technique-name">
-            {type.replace(/-/g, " ")} Breathing
-          </h1>
-          <p className="description">{technique.text}</p>
-        </header>
+        <div className="breath-header">
+    <h1 className="technique-name">
+      {type.replace(/-/g, " ")} Breathing
+    </h1>
+    <p className="description">{technique.text}</p>
+  </div>
 
         <Visualizer 
           technique={technique}  

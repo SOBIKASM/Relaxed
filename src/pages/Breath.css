@@ -264,6 +264,7 @@
   transform: translateY(-2px);
 }
 
+
 /* Animations */
 @keyframes fadeIn {
   from {
@@ -338,5 +339,29 @@
   .new-session-btn,
   .go-back-btn {
     width: 100%;
+  }
+  .breath-content {
+    justify-content: center; 
+    gap: 10px;
+    max-width: 100%;
+    padding-top: 40px;
+  }
+
+  .technique-name {
+    font-size: 1.8rem; 
+    text-align: center;
+    margin: 0; 
+  }
+
+  .description {
+    font-size: 0.9rem;
+    padding: 0 1rem;
+    margin: 5px auto;
+  }
+
+  .visualizer-wrapper { 
+    max-height: 50vh; 
+    display: flex;
+    align-items: center;
   }
 }

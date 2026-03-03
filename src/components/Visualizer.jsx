@@ -8,11 +8,14 @@ function Visualizer({ technique, isPaused }) {
   const [phase, setPhase] = useState('inhale');
   const [progress, setProgress] = useState(0);
   const [timeLeft, setTimeLeft] = useState(technique.inhale);
+
   const phaseStartRef = useRef(Date.now());
   const phaseDurationRef = useRef(technique.inhale);
   const phaseRef = useRef('inhale');
   const rafRef = useRef();
-
+useEffect(() => {
+  console.log("PHASE STATE:", phase);
+}, [phase]);
   const getTextScale = () => {
     switch (phaseRef.current) {
       case 'inhale':
@@ -41,9 +44,7 @@ function Visualizer({ technique, isPaused }) {
 
   useEffect(() => {
     if (isPaused) {
-      if (rafRef.current) {
-        cancelAnimationFrame(rafRef.current);
-      }
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
       return;
     }
 
@@ -86,9 +87,7 @@ function Visualizer({ technique, isPaused }) {
     rafRef.current = requestAnimationFrame(updateTimer);
 
     return () => {
-      if (rafRef.current) {
-        cancelAnimationFrame(rafRef.current);
-      }
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
   }, [technique, isPaused]);
 
@@ -102,35 +101,50 @@ function Visualizer({ technique, isPaused }) {
             transition: 'transform 0.1s linear'
           }}
         />
+
         <div
           className="phase-text"
           style={{
-            transform: `scale(${getTextScale()})`,
+            transform: `translate(-50%, -50%) scale(${getTextScale()})`,
             transition: 'transform 0.1s linear',
-            // Use solid color in dark mode, gradient in light mode
-            background: theme === 'dark' 
-              ? 'none' 
+            background: theme === 'dark'
+              ? 'none'
               : 'var(--phase-text-gradient)',
-            WebkitTextFillColor: theme === 'dark' 
-              ? 'var(--phase-text-color)' 
+
+            backgroundClip: theme === 'dark' ? 'initial' : 'text',
+            WebkitBackgroundClip: theme === 'dark' ? 'initial' : 'text',
+            WebkitTextFillColor: theme === 'dark'
+              ? 'var(--phase-text-color)'
               : 'transparent',
-            color: theme === 'dark' ? 'var(--phase-text-color)' : 'transparent'
+            color: theme === 'dark'
+              ? 'var(--phase-text-color)'
+              : 'transparent'
           }}
         >
           {phase}
         </div>
       </div>
 
-      <div 
+      <div
         className="timer"
         style={{
-          background: theme === 'dark' ? 'none' : 'var(--phase-text-gradient)',
-          WebkitTextFillColor: theme === 'dark' ? 'var(--timer-color)' : 'transparent',
-          color: theme === 'dark' ? 'var(--timer-color)' : 'transparent'
+          background: theme === 'dark'
+            ? 'none'
+            : 'var(--phase-text-gradient)',
+
+          backgroundClip: theme === 'dark' ? 'initial' : 'text',
+          WebkitBackgroundClip: theme === 'dark' ? 'initial' : 'text',
+          WebkitTextFillColor: theme === 'dark'
+            ? 'var(--timer-color)'
+            : 'transparent',
+          color: theme === 'dark'
+            ? 'var(--timer-color)'
+            : 'transparent'
         }}
       >
         {Math.ceil(timeLeft)}s
       </div>
+
       <Instruction phase={phase} progress={progress} />
     </div>
   );
