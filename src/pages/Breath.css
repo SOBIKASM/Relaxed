@@ -60,6 +60,10 @@
 
 .technique-name {
   text-transform: uppercase;
+    background: linear-gradient(90deg, var(--gradient-start) 0%, var(--gradient-mid1) 20%, var(--gradient-mid2) 40%, var(--gradient-mid3) 60%, var(--gradient-end) 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -1px;
   color: var(--text-heading);
   letter-spacing: 2px;
   line-height: 1.2;

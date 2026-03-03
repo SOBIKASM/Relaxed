@@ -45,8 +45,8 @@
   --text-primary: #e0e0e0;
   --text-secondary: #b0b0b0;
   --text-heading: #90cdf4;
-  --text-gradient: linear-gradient(90deg, #90cdf4 0%, #63b3ed 20%, #4299e1 40%, #3182ce 60%, #2c5282 80%);
-  --text-gradient-webkit: linear-gradient(90deg, #90cdf4, #63b3ed, #4299e1, #3182ce, #2c5282);
+  --text-gradient: linear-gradient(90deg, #90cdf4 0%, #63b3ed 20%, #4299e1 40%, #93b7d8 60%, #85a7d0 80%);
+  --text-gradient-webkit: linear-gradient(90deg, #90cdf4, #63b3ed, #4299e1, #9bbbd9, #6690c4);
   --card-bg: rgba(30, 30, 30, 0.8);
   --card-border: rgba(255, 255, 255, 0.1);
   --input-bg: rgba(45, 45, 45, 0.9);
@@ -65,7 +65,7 @@
   --hover-bg: rgba(255, 255, 255, 0.1);
   --active-bg: #333333;
   --circle-inhale: radial-gradient(circle, #2c5282, #1a365d);
-  --circle-hold: radial-gradient(circle, #2d3748, #1a202c);
+  --circle-hold: radial-gradient(circle, #465878, #35435e);
   --circle-exhale: radial-gradient(circle, #44337a, #322659);
   --instruction-color: #90cdf4;
   --timer-color: #90cdf4;
